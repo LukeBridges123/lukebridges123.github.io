@@ -38,7 +38,7 @@ export default function CodePage(){
                 algorithm) and turned all the basic functions to AWS Lambda functions so they could serve as a lightweight backend for this.
             </p>
 
-            <p><a href = '/rsa'>It's hosted on this website, and you can try it out by clicking this link.</a></p>
+            <p><a href = '/personal_page/#/rsa'>It's hosted on this website, and you can try it out by clicking this link.</a></p>
 
 
             <h2>Spatial Iterated Prisoner's Dilemma</h2>

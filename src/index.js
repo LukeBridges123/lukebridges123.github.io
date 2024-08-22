@@ -8,10 +8,10 @@ import Root from "./routes/root";
 import ErrorHandler from "./error-handling";
 import "./index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <RSADemo />,
       },
       {
-        path: "about",
+        path: "/",
         element: <AboutPage />,
       },
       {
