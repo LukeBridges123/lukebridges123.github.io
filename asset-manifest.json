@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.171b5610.css",
-    "main.js": "/static/js/main.aa87ed0e.js",
-    "static/media/jmm-poster.png": "/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
-    "static/media/assembly-lines-1.png": "/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
-    "index.html": "/index.html",
-    "main.171b5610.css.map": "/static/css/main.171b5610.css.map",
-    "main.aa87ed0e.js.map": "/static/js/main.aa87ed0e.js.map"
+    "main.css": "/personal_page/static/css/main.171b5610.css",
+    "main.js": "/personal_page/static/js/main.936ab39f.js",
+    "static/media/jmm-poster.png": "/personal_page/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
+    "static/media/assembly-lines-1.png": "/personal_page/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
+    "index.html": "/personal_page/index.html",
+    "main.171b5610.css.map": "/personal_page/static/css/main.171b5610.css.map",
+    "main.936ab39f.js.map": "/personal_page/static/js/main.936ab39f.js.map"
   },
   "entrypoints": [
     "static/css/main.171b5610.css",
-    "static/js/main.aa87ed0e.js"
+    "static/js/main.936ab39f.js"
   ]
 }
