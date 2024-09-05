@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/personal_page/static/css/main.171b5610.css",
-    "main.js": "/personal_page/static/js/main.48f211de.js",
-    "static/media/jmm-poster.png": "/personal_page/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
-    "static/media/assembly-lines-1.png": "/personal_page/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
-    "index.html": "/personal_page/index.html",
-    "main.171b5610.css.map": "/personal_page/static/css/main.171b5610.css.map",
-    "main.48f211de.js.map": "/personal_page/static/js/main.48f211de.js.map"
+    "main.css": "/static/css/main.171b5610.css",
+    "main.js": "/static/js/main.5ea89603.js",
+    "static/media/jmm-poster.png": "/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
+    "static/media/assembly-lines-1.png": "/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
+    "index.html": "/index.html",
+    "main.171b5610.css.map": "/static/css/main.171b5610.css.map",
+    "main.5ea89603.js.map": "/static/js/main.5ea89603.js.map"
   },
   "entrypoints": [
     "static/css/main.171b5610.css",
-    "static/js/main.48f211de.js"
+    "static/js/main.5ea89603.js"
   ]
 }
