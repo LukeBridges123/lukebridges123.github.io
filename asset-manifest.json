@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.171b5610.css",
-    "main.js": "/static/js/main.cdc4343b.js",
+    "main.js": "/static/js/main.aec35886.js",
     "static/media/jmm-poster.png": "/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
     "static/media/assembly-lines-1.png": "/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
     "index.html": "/index.html",
     "main.171b5610.css.map": "/static/css/main.171b5610.css.map",
-    "main.cdc4343b.js.map": "/static/js/main.cdc4343b.js.map"
+    "main.aec35886.js.map": "/static/js/main.aec35886.js.map"
   },
   "entrypoints": [
     "static/css/main.171b5610.css",
-    "static/js/main.cdc4343b.js"
+    "static/js/main.aec35886.js"
   ]
 }
