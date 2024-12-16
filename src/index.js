@@ -6,9 +6,11 @@ import AboutPage  from "./routes/about.js";
 import MathPage from "./routes/math.js";
 import Root from "./routes/root";
 import ErrorHandler from "./error-handling";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./index.css";
 
-import { createHashRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 
 const router = createHashRouter([
@@ -35,11 +37,14 @@ const router = createHashRouter([
       },
     ]
   },
-]);
+]); 
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      
+    </RouterProvider> 
+    
   </StrictMode>
 );

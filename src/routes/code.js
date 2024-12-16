@@ -1,6 +1,8 @@
 import "../index.css"
 import {Link} from "react-router-dom"
 import assembly_lines_screenshot1 from "../images/assembly-lines-1.png"
+import compiler_display from "../images/compiler-display.png"
+import sipd from "../images/sipd.png"
 export default function CodePage(){
     return (
         <div className="center-container">
@@ -9,16 +11,16 @@ export default function CodePage(){
 
             <h1>Newer Projects</h1>
             <h2>Assembly Lines</h2>
-            <img src = {assembly_lines_screenshot1} width = {800}/>
-            <p>This was developed in collaboration with some other math students as part of the 2024 Polymath Jr. REU, under
-                the mentorship of Not-A-Bot Studios. It's an open-source, browser-based educational game, targeted at middle schoolers and early high schoolers,
-                where you solve physics puzzles by graphing lines; that is, you write the equations of lines using a Desmos-style
+            <img src = {assembly_lines_screenshot1} className="inline-image"/>
+            <p>This is an open-source, browser-based educational game, written in Javascript using the Playcanvas game engine. 
+                It's targeted at middle schoolers and early high schoolers. In it, you solve physics puzzles by graphing lines; that is, you write the equations of lines using a Desmos-style
                 UI, and the lines you graph become ramps that you use to roll a ball into a goal. 
             </p>
 
-            <p> Currently we're putting the finishing touches (mainly graphics and some general polish) on a demo version which will then be tested in schools. Once that's 
+            <p> The game was developed in collaboration with some other math students as part of the 2024 Polymath Jr. REU, under
+            the mentorship of Not-A-Bot Studios.Currently we're putting the finishing touches (mainly graphics and some general polish) on a demo version which will then be tested in schools. Once that's 
                 finished, I'll put a link here to a deployed version of the game, plus the code, which should eventually make it to 
-                GitHub (development was originally done with the online game engine Playcanvas' built-in version control). 
+                GitHub (development was originally done with Playcanvas' built-in version control). 
             </p>
 
             <p> The demo has 28 levels total, divided into 4 worlds that progressively introduce more complicated mechanics. In the first, 
@@ -28,7 +30,8 @@ export default function CodePage(){
             </p>
 
             <h2>RSA Demo Web App</h2>
-            <p>This is a demo of the RSA encryption system; it lets you play around with all the basic functionality--
+            <p>This is an online demo of the RSA encryption system, with a frontend built in React and a serverless backend using AWS Lambda to 
+                call Python functions. It lets you play around with all the basic functionality of RSA--
                 key generation, encryption and decryption, digital signatures--and has a brief explanation of how it all works.
                 
             </p>
@@ -38,20 +41,38 @@ export default function CodePage(){
                 algorithm) and turned all the basic functions to AWS Lambda functions so they could serve as a lightweight backend for this.
             </p>
 
-            <p><a href = '/personal_page/#/rsa'>It's hosted on this website, and you can try it out by clicking this link.</a></p>
+            <p><a href = '/#/rsa'>It's hosted on this website, and you can try it out by clicking this link.</a></p>
 
+            <h2>WebAssembly Compiler</h2>
+            <img src={compiler_display} className="inline-image"/>
+            <p>As part of CSE 450, the undergraduate compilers elective at 
+                MSU, <a href="https://www.linkedin.com/in/rosespangler/">Rose Spengler</a>, <a href="https://www.linkedin.com/in/lewianamo/">Lewi Anamo</a>, and I wrote a 
+                simple imperative language which can be compiled to WebAssembly, via a compiler written in C++; it includes most of the basic functionality 
+                you'd expect from such a language (loops, conditionals, function definitions and calls, static types, etc.) and
+                a number of built-in operations on numeric types and strings. 
+            </p>
 
+            <p>I've decided to continue work on it on my own, and plan to add more features (e.g. arrays for arbitrary types, a larger
+                "standard library" of functions and operations, etc.) as well as a web-based frontend (most likely compiling the compiler 
+                itself to WebAssembly via Emscripten, and creating some kind of interface to allow the user to write, compile, and run 
+                code in their own browser). In the meantime, you can see the existing code on Github <a href="https://github.com/LukeBridges123/CompilerProject">here</a>.
+            </p>
             <h2>Spatial Iterated Prisoner's Dilemma</h2>
-            <p>This is a cellular-automaton-esque variant on the classic prisoner's dilemma, which I learned about in Gary William
-                Flake's book <i>The Computational Beauty of Nature</i>. It's played on a square grid like Conway's Game of Life,
-                with each cell containing a certain strategy (e.g. "always cooperate", "always defect", "tit-for-tat", etc.); strategies
+            <img src={sipd} className="inline-image"/>
+            <p>This is a cellular-automaton-esque variant on the classic prisoner's dilemma, implemented in Python via Pygame and hosted online
+                using the Pygbag library. The SIPD, which I learned about in Gary William
+                Flake's book <i>The Computational Beauty of Nature</i>, is played on a square grid like Conway's Game of Life,
+                with each cell containing a certain strategy (e.g. "always cooperate", "always defect", "tit-for-tat", etc.). Strategies
                 play the iterated prisoner's dilemma against each their neighbors, then switch to the strategy used by whichever neighboring
                 square won the most points in its games. 
             </p>
 
             <p>
-                Currently, this is under construction; much of the underlying logic has been already written (in Python), and I plan to add 
-                graphics and a UI via Pygame and then deploy to a web-based version via Pygbag.
+                Currently, this is under construction; much of the underlying logic has been already written, and I already have
+                a basic UI which can be run in a web browser. The main things left to be done are improving and adding to 
+                the UI so that the user can control some of the main parameters of the simulation, refactoring some of the Pygame code (the 
+                fundamentals in Python are already decently solid, but the Pygame code used to run the display is a bit messy), and actually hosting it online (probably on itch.io, which can handle Pygbag 
+                projects.) The code is <a href="https://github.com/lukeBridges123/SIPD">here</a>, though bear in mind that it's unfinished.
             </p>
 
             <h1>Older Projects</h1>
@@ -64,7 +85,8 @@ export default function CodePage(){
             </p>
             <p>
                 Development stalled out before I implemented anything like an user interface, and the final version has annoying limitations 
-                (e.g. all expressions need to be fully parenthesized). Still, what's there does work.
+                (e.g. all expressions need to be fully parenthesized). Still, what's there does work. You can find the code for it <a href="https://github.com/LukeBridges123/scheme_symbolic_math">here, 
+                on my Github</a>.
             </p>
 
             <h2>Scheme Interpreter</h2>
@@ -73,6 +95,7 @@ export default function CodePage(){
             <i>Structure and Interpretation of Computer Programs</i>, though with some additions and optimizations (e.g. using Racket's hash tables
             to store variable-value mappings, where the original has just used lists of pairs). It works well enough for what it is, and I enjoyed writing it,
             but it's definitely half-baked and unfinished, and I'm only putting it here for completeness. 
+            See <a href="https://github.com/LukeBridges123/scheme_interpreter">here</a> for the code.
             </p>
         </div>
     )

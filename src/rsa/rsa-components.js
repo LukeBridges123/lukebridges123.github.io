@@ -18,29 +18,31 @@ export function KeygenForm({prime1, prime2, publicExp, privateExp, modulus, getK
       getKeys(digits);
     }
     return (
-        <form method = "POST" onSubmit = {submitNumDigits}>
+      <div className="center-container">
+        <form method = "POST" onSubmit = {submitNumDigits} className="center-container" style={{gap : "10px", padding : "10px"}}>
           <label>
             Number of digits in each prime: <input name = "keygenInput" type = "number" defaultValue={10}/>
           </label>
           <button type = "submit" className="navbar-button">Generate keys</button>
-          {showKeyDisplay ? 
-          <KeyDisplay p = {prime1} q = {prime2} publicExp = {publicExp} privateExp = {privateExp} modulus = {modulus} /> : null}
         </form>
+        {showKeyDisplay ? 
+          <KeyDisplay p = {prime1} q = {prime2} publicExp = {publicExp} privateExp = {privateExp} modulus = {modulus} /> : null}
+      </div>
     );
 }
 export function KeyDisplay({p, q, publicExp, privateExp, modulus}){
     return (
-        <>
+        <div className="center-container">
         <p>Bob's first secret prime, p: {p}</p>
         <p>Bob's second secret prime, q: {q}</p>
         <p>Bob then computes the modulus: pq = {p} * {q} = {modulus}</p>
         <p>For the public key, Bob chooses an integer E with gcd(E, (p-1)(q-1)) = 1; {publicExp} works.</p>
         <p>For the private key, Bob solves the equation ED ≡ 1 (mod (p-1)(q-1)) and gets D = {privateExp}.</p>
-        </>
+        </div>
     )
 }
   
-export function EncryptDecryptSignForm({publicExp, privateExp, modulus, returnedMessage, sendAndReceiveMessage, encrypt, sign, show, translatedText}){
+export function EncryptDecryptSignForm({publicExp, privateExp, modulus, returnedMessage, sendAndReceiveMessage, encrypt, sign, show}){
     function submitMessage(e){
       e.preventDefault();
       const message = e.target.messageInput.value;
@@ -51,17 +53,23 @@ export function EncryptDecryptSignForm({publicExp, privateExp, modulus, returned
     //except for which messages should be displayed in the form. The "encrypt" and "sign" parameters control this.
   
     const actionName = (sign ? "sign" : (encrypt ? "encrypt" : "decrypt"));
+    const computeMessage = (encrypt && !sign ? "Alice " : "Bob ") + "raises the given message to the power " + 
+    (encrypt && !sign ? publicExp : privateExp) + 
+    " and reduces mod " + modulus + ". They get " + returnedMessage + ".";
     return (
-      <>
-          <form method = "POST" onSubmit={submitMessage}>
+      <div className="center-container">
+          <form method = "POST" onSubmit={submitMessage} className="center-container" style={{gap : "10px", padding : "10px"}}>
             <label>
               Message to {actionName}: 
-              <input name = "messageInput" type = "number" value={(encrypt ? translatedText : 0)}/>
+              <input name = "messageInput" type = "number" min={0} max = {modulus}/>
             </label>
             <button label = "submit" className="navbar-button">{actionName.charAt(0).toUpperCase() + actionName.substring(1)} message</button>
           </form>
-          {show ? <p>Your {actionName}ed message: {returnedMessage}</p> : null}
-      </>
+          {show ? <div className="center-container">
+                  <p>{computeMessage}</p>
+                  <p>Your {actionName}ed message: {returnedMessage}</p> 
+                  </div>: null}
+      </div>
     )
 }
   

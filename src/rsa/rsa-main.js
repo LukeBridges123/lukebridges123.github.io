@@ -69,11 +69,10 @@ export function RSADemo(){
   return (
     <div className="center-container">
       <KeygenDescription />
-      <TextForm translatedText={translatedText} showText= {showText} handleTextTranslation = {handleTextTranslation}/>
       <KeygenForm prime1 = {prime1} prime2={prime2} publicExp={publicExp} privateExp={privateExp} modulus={modulus} 
       getKeys={getKeys} showKeyDisplay={showKeyDisplay}/>
       <EncryptDecryptSignForm publicExp={publicExp} privateExp={privateExp} modulus={modulus} returnedMessage={encryptedMessage} 
-      sendAndReceiveMessage={sendAndReceiveMessage} encrypt={true} sign = {false} show = {showEncryptedMessage} translatedText={translatedText}/>
+      sendAndReceiveMessage={sendAndReceiveMessage} encrypt={true} sign = {false} show = {showEncryptedMessage} />
       <EncryptDecryptSignForm publicExp={publicExp} privateExp={privateExp} modulus={modulus} returnedMessage={decryptedMessage} 
       sendAndReceiveMessage={sendAndReceiveMessage} encrypt={false} sign = {false} show = {showDecryptedMessage} />
       <EncryptDecryptSignForm publicExp={publicExp} privateExp={privateExp} modulus={modulus} returnedMessage={signedMessage} 

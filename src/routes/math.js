@@ -8,8 +8,8 @@ export default function MathPage(){
                 direction of Dr. Aklilu Zeleke and Peikai Qi, on research into recursive polynomial sequences: that is, sequences 
                 of polynomials defined by recurrence relations similar to the one that defines the Fibonacci numbers. Below, I've 
                 put an image of the poster we presented at the 2024 Joint Mathematics Meetings if you'd like to know more. 
-            </p>
-            <img src = {jmm_poster} width = {1000}/>
+            </p>            
+            <img src = {jmm_poster} width={"100%"}/>
         </div>
     )
 }

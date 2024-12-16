@@ -28,7 +28,7 @@ export default function Root(){
 function NavigationBar() {
     return (
       <div className="navbar">
-        <p style={{color :'white'}}>Luke Bridges' Page</p>
+        <p style={{color :'white', padding : '1em'}}>Luke Bridges' Page</p>
         <Link to ={'/'}><button className="navbar-button">About</button></Link>
         <Link to={'code'}><button className="navbar-button">Code</button></Link>
         <Link to={'math'}><button className="navbar-button">Math</button></Link>
