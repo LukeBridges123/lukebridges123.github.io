@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.66cff7ef.css",
-    "main.js": "/static/js/main.71526017.js",
+    "main.css": "/static/css/main.c9d9e3a7.css",
+    "main.js": "/static/js/main.47f89d8f.js",
     "static/media/jmm-poster.png": "/static/media/jmm-poster.05dc6e65c4e5c3ba8c6f.png",
     "static/media/sipd.png": "/static/media/sipd.b5ef35680aa03663cb54.png",
     "static/media/assembly-lines-1.png": "/static/media/assembly-lines-1.7a39f622cea9ad465786.png",
     "static/media/compiler-display.png": "/static/media/compiler-display.d9a179bc82ddf1d2db8a.png",
     "index.html": "/index.html",
-    "main.66cff7ef.css.map": "/static/css/main.66cff7ef.css.map",
-    "main.71526017.js.map": "/static/js/main.71526017.js.map"
+    "main.c9d9e3a7.css.map": "/static/css/main.c9d9e3a7.css.map",
+    "main.47f89d8f.js.map": "/static/js/main.47f89d8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.66cff7ef.css",
-    "static/js/main.71526017.js"
+    "static/css/main.c9d9e3a7.css",
+    "static/js/main.47f89d8f.js"
   ]
 }
