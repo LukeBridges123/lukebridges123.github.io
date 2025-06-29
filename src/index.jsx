@@ -1,11 +1,12 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { RSADemo } from "./rsa/rsa-main";
-import  CodePage  from "./routes/code.js";
-import AboutPage  from "./routes/about.js";
-import MathPage from "./routes/math.js";
-import Root from "./routes/root";
-import ErrorHandler from "./error-handling";
+import { RSADemo } from "./rsa/rsa-main.jsx";
+import {CompilerPage} from "./compiler/compiler-main.jsx"
+import  CodePage  from "./routes/code.jsx";
+import AboutPage  from "./routes/about.jsx";
+import MathPage from "./routes/math.jsx";
+import Root from "./routes/root.jsx";
+import ErrorHandler from "./error-handling.jsx";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./index.css";
@@ -22,6 +23,10 @@ const router = createHashRouter([
       {
         path: "rsa",
         element: <RSADemo />,
+      },
+      {
+        path: "compiler",
+        element: <CompilerPage />,
       },
       {
         path: "/",

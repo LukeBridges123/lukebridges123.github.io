@@ -16,7 +16,7 @@ export default function Root(){
     return (
         <>
             <NavigationBar />
-            <div class ="pagebody">
+            <div className ="pagebody">
                 <ScrollToTop/>
                 <Outlet />
             </div>

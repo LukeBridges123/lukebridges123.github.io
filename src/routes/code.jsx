@@ -29,6 +29,8 @@ export default function CodePage(){
                 own goal; and in the last, the mechanics from worlds 2 and 3 are combined. 
             </p>
 
+            <p>This material is based upon work supported by the National Science Foundation under Grant No. 2015553.</p>
+
             <h2>RSA Demo Web App</h2>
             <p>This is an online demo of the RSA encryption system, with a frontend built in React and a serverless backend using AWS Lambda to 
                 call Python functions. It lets you play around with all the basic functionality of RSA--

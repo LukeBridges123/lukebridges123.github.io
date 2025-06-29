@@ -60,7 +60,7 @@ export function KeygenDescription(){
                     Once you've produced a signed message, it will be automatically (implicitly) filled into the input used by the "verify" button. 
                 </p>
 
-            <p>Some further notes on usage: 
+            <p>Some further notes on usage: </p>
                 
                 <ul>
                     <li>Make sure to generate keys before using any of the encrypt/decrypt functions, otherwise
@@ -75,7 +75,7 @@ export function KeygenDescription(){
                         (Incidentally, these are both problems that real implementations of RSA have to deal with.)</li>
       
                 </ul>
-            </p>
+            
         </div>
     )
 }

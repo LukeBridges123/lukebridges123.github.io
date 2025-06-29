@@ -26,6 +26,10 @@ export function RSADemo(){
     console.log(url)
     const response = await fetch(url, {method: "POST", mode: "cors"});
     const responseData = await response.json();
+    if (response.status === 400){
+      alert(responseData.error);
+      return;
+    }
     updatePrime1(responseData.p);
     updatePrime2(responseData.q);
     updatePublicExp(responseData.public_exp);
