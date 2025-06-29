@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { numToText, textToNum, isAllUppercase } from "./rsa-helper-functions";
+import { ErrorMessage, LoadingMessage } from "../components/ErrorMessage";
+
 export function TextForm({translatedText, showText, handleTextTranslation}){
     return (
       <form onSubmit = {handleTextTranslation}>
@@ -15,13 +17,19 @@ export function KeygenForm({prime1, prime2, publicExp, privateExp, modulus, getK
     function submitNumDigits(e){
       e.preventDefault();
       const digits = e.target.keygenInput.value;
+      
+      // Validate input
+      if (!digits || digits < 1 || digits > 20) {
+        return; // Error will be handled by parent component
+      }
+      
       getKeys(digits);
     }
     return (
       <div className="center-container">
         <form method = "POST" onSubmit = {submitNumDigits} className="center-container" style={{gap : "10px", padding : "10px"}}>
           <label>
-            Number of digits in each prime: <input name = "keygenInput" type = "number" defaultValue={10}/>
+            Number of digits in each prime (5-20 digits allowed): <input name = "keygenInput" type = "number" defaultValue={10} min="5" max="20"/>
           </label>
           <button type = "submit" className="navbar-button">Generate keys</button>
         </form>
@@ -46,6 +54,12 @@ export function EncryptDecryptSignForm({publicExp, privateExp, modulus, returned
     function submitMessage(e){
       e.preventDefault();
       const message = e.target.messageInput.value;
+      
+      // Validate input
+      if (!message || message < 0 || message >= modulus) {
+        return; // Error will be handled by parent component
+      }
+      
       const key = (sign ? privateExp : (encrypt ? publicExp : privateExp));
       sendAndReceiveMessage(message, key, modulus, encrypt, sign);
     }
@@ -77,37 +91,75 @@ export function VerifyForm({publicExp, modulus, signedMessage, expectedMessage})
     const [verificationResult, updateVerificationResult] = useState("");
     const [verifiedMessage, updateVerifiedMessage] = useState("");
     const [showVerificationResult, updateShowVerificationResult] = useState(false);
-    /*
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
     async function verifyMessage(publicKey, modulus, signedMessage, expectedMessage){
-      const url = "https://vivqmgynyj.execute-api.us-east-2.amazonaws.com/default/RSADemoVerify?public_exp=" + publicKey +
-                  "&modulus=" + modulus + "&signed_message=" + signedMessage + "&expected_message=" + expectedMessage;
-      const response = await fetch(url, {method: "POST", mode: "cors"});
-      const responseData = await response.json();
-      console.log(responseData.verification_result);
-      updateVerificationResult(responseData.verification_result);
-    }
-    */
-    async function verifyMessage(publicKey, modulus, signedMessage, expectedMessage){
-      const url = "https://x0eii833df.execute-api.us-east-2.amazonaws.com/default/RSADemoEncryptDecrypt?exp=" + publicKey + 
-                  "&message=" + signedMessage + "&modulus=" + modulus;
-      console.log(url);
-      const response = await fetch(url, {method: "POST", mode: "cors"});
-      const responseData = await response.json();
-      console.log(responseData.message.toString());
-      console.log(expectedMessage.toString());
-      console.log(expectedMessage.toString() === responseData.message.toString());
-      updateVerifiedMessage(responseData.message);
-      updateVerificationResult(expectedMessage.toString() === responseData.message.toString());
-      updateShowVerificationResult(true);
+      setIsLoading(true);
+      setError(null);
+      
+      try {
+        const url = "https://x0eii833df.execute-api.us-east-2.amazonaws.com/default/RSADemoEncryptDecrypt?exp=" + publicKey + 
+                    "&message=" + signedMessage + "&modulus=" + modulus;
+        const response = await fetch(url, {method: "POST", mode: "cors"});
+        const responseData = await response.json();
+        
+        if (!response.ok) {
+          setError({
+            message: `Verification failed: ${responseData.error || 'Server error occurred. Please try again.'} (Status: ${response.status})`,
+            type: 'error'
+          });
+          return;
+        }
+        
+        updateVerifiedMessage(responseData.message);
+        updateVerificationResult(expectedMessage.toString() === responseData.message.toString());
+        updateShowVerificationResult(true);
+        
+        setError({
+          message: expectedMessage.toString() === responseData.message.toString() 
+            ? "Signature verification successful! The message is authentic." 
+            : "Signature verification failed! The message may have been tampered with.",
+          type: expectedMessage.toString() === responseData.message.toString() ? 'success' : 'error'
+        });
+      } catch (err) {
+        setError({
+          message: "Network error: Unable to connect to the verification service. Please check your internet connection and try again.",
+          type: 'error'
+        });
+      } finally {
+        setIsLoading(false);
+      }
     }
   
     function submitMessage(e){
       e.preventDefault();
+      
+      if (!signedMessage || !expectedMessage) {
+        setError({
+          message: "Please sign a message first before attempting verification.",
+          type: 'warning'
+        });
+        return;
+      }
+      
       verifyMessage(publicExp, modulus, signedMessage, expectedMessage);
     }
   
     return (
       <>
+        {error && (
+          <ErrorMessage 
+            message={error.message} 
+            type={error.type} 
+            onClose={() => setError(null)}
+          />
+        )}
+        
+        {isLoading && (
+          <LoadingMessage message="Verifying signature..." />
+        )}
+        
         <form method = "POST" onSubmit = {submitMessage}>
           <button label = "submit" className="navbar-button">Verify signed message using public key</button>
         </form>

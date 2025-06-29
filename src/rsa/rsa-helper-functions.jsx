@@ -9,14 +9,19 @@ export function isAllUppercase(str) {
   
 export function textToNum(text) {
     if (!isAllUppercase(text)){
-        alert("Your text does not consist only of uppercase letters.");
-
+        return {
+            error: true,
+            message: "Text validation failed: Your text must consist only of uppercase letters (A-Z). Please remove any lowercase letters, numbers, spaces, or special characters."
+        };
     } else {
         let num = 0;
         for (let i = 0; i < text.length; i++){
         num += (text.charCodeAt(i) - 'A'.charCodeAt(0) + 1) * (100 ** i);
         }
-        return num;
+        return {
+            error: false,
+            result: num
+        };
     }
 }
 export function numToText(num){

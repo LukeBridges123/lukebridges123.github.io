@@ -7,8 +7,6 @@ import AboutPage  from "./routes/about.jsx";
 import MathPage from "./routes/math.jsx";
 import Root from "./routes/root.jsx";
 import ErrorHandler from "./error-handling.jsx";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import "./index.css";
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
