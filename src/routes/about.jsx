@@ -4,7 +4,7 @@ export default function AboutPage(){
     return (
         <div className="center-container">
             <p>My name is Luke Bridges; I am a junior at Michigan State University, double-majoring in mathematics and computer 
-            science. This website (currently under construction) is meant as a portfolio to host my personal coding projects.</p>
+            science. This website (currently and perpetually under construction) is meant as a portfolio to host my personal coding projects.</p>
             
             <p>You can use the tabs above to see some of the work I've done, or check out my <a href="https://www.linkedin.com/in/luke-bridges-425127235/">
             Linkedin</a> or <a href="https://github.com/LukeBridges123/">Github</a>. I've also put much of my resume below, though
