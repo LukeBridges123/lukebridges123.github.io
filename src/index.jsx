@@ -1,7 +1,6 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RSADemo } from "./rsa/rsa-main.jsx";
-import {CompilerPage} from "./compiler/compiler-main.jsx"
 import  CodePage  from "./routes/code.jsx";
 import AboutPage  from "./routes/about.jsx";
 import MathPage from "./routes/math.jsx";
@@ -21,10 +20,6 @@ const router = createHashRouter([
       {
         path: "rsa",
         element: <RSADemo />,
-      },
-      {
-        path: "compiler",
-        element: <CompilerPage />,
       },
       {
         path: "/",
