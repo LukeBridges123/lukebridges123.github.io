@@ -17,7 +17,7 @@ export default function AboutPage(){
                 <li>Added a fully-featured permissions system and logging functionality (fixing known security issues), made improvements to the role assignment workflow (speeding up common tasks by up to 5x), integrated with a company-wide GraphQL employee database, and made numerous UI/UX and usability improvements.</li>
                 <li>Conducted multiple interviews with end users to identify pain points, get suggestions for improvements, and coordinate rollouts of new features.</li>
             </ul>
-            <h2>Supervisor — MSU Math Learning Center (Sep. 2024-Present)</h2>
+            <h2>Supervisor — MSU Math Learning Center (Sep. 2024-Apr. 2025)</h2>
             <ul>
                 <li>Led and supervised a team of tutors to ensure that students got matched with tutors in a timely manner. </li>
                 <li>Provided additional tutoring to help tutors who were stuck and students who couldn't get tutoring from anyone else during busy periods.</li>
@@ -48,7 +48,7 @@ export default function AboutPage(){
                 presentations.</li>
                 <li>See also <Link to="/math">the Math page here</Link> for more information.</li>
             </ul>
-            <h2>Student Library Assistant — MSU Libraries (Aug. 2022-Present)</h2>
+            <h2>Student Library Assistant — MSU Libraries (Aug. 2022-Apr. 2025)</h2>
             <ul>
                 <li>Aided library patrons with research, answered questions about the library's policies and collections, 
                     provided technical support for electronic resource access, and redirected questions to other people 
