@@ -11,6 +11,12 @@ export default function AboutPage(){
             you'll have to go to the <Link to="/code">the Code tab above</Link> for descriptions of personal projects.</p>
 
             <h1>Experience</h1>
+            <h2>Software Engineering Intern - Rocket Mortgage (May 2025 - Present)</h2>
+            <ul>
+                <li>Improved an internal employee role management system serving over 1000 users, redesigning the frontend (Angular with Typescript) and adding new features to the backend (C# .NET API with AWS DynamoDB database).</li>
+                <li>Added a fully-featured permissions system and logging functionality (fixing known security issues), made improvements to the role assignment workflow (speeding up common tasks by up to 5x), integrated with a company-wide GraphQL employee database, and made numerous UI/UX and usability improvements.</li>
+                <li>Conducted multiple interviews with end users to identify pain points, get suggestions for improvements, and coordinate rollouts of new features.</li>
+            </ul>
             <h2>Supervisor — MSU Math Learning Center (Sep. 2024-Present)</h2>
             <ul>
                 <li>Led and supervised a team of tutors to ensure that students got matched with tutors in a timely manner. </li>
