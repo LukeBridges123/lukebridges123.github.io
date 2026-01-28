@@ -71,11 +71,13 @@ export default function CodePage(){
 
             <p>
                 Currently, this is under construction; much of the underlying logic has been already written, and I already have
-                a basic UI which can be run in a web browser. The main things left to be done are improving and adding to 
-                the UI so that the user can control some of the main parameters of the simulation, refactoring some of the Pygame code (the 
-                fundamentals in Python are already decently solid, but the Pygame code used to run the display is a bit messy), and actually hosting it online (probably on itch.io, which can handle Pygbag 
+                a basic UI which can be run in a web browser. The main things left to be done are improving and adding to
+                the UI so that the user can control some of the main parameters of the simulation, refactoring some of the Pygame code (the
+                fundamentals in Python are already decently solid, but the Pygame code used to run the display is a bit messy), and actually hosting it online (probably on itch.io, which can handle Pygbag
                 projects.) The code is <a href="https://github.com/lukeBridges123/SIPD">here</a>, though bear in mind that it's unfinished.
             </p>
+
+            <p><Link to="/sipd">You can try it out in your browser by clicking this link.</Link></p>
 
             <h1>Older Projects</h1>
             <h2>Symbolic Calculus</h2>
