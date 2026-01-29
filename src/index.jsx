@@ -4,6 +4,7 @@ import { RSADemo } from "./rsa/rsa-main.jsx";
 import  CodePage  from "./routes/code.jsx";
 import AboutPage  from "./routes/about.jsx";
 import MathPage from "./routes/math.jsx";
+import SIPDPage from "./routes/sipd.jsx";
 import Root from "./routes/root.jsx";
 import ErrorHandler from "./error-handling.jsx";
 import "./index.css";
@@ -32,6 +33,10 @@ const router = createHashRouter([
       {
         path: "math",
         element: <MathPage />,
+      },
+      {
+        path: "sipd",
+        element: <SIPDPage />,
       },
     ]
   },
