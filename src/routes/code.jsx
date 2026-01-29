@@ -70,11 +70,10 @@ export default function CodePage(){
             </p>
 
             <p>
-                Currently, this is under construction; much of the underlying logic has been already written, and I already have
-                a basic UI which can be run in a web browser. The main things left to be done are improving and adding to
-                the UI so that the user can control some of the main parameters of the simulation, refactoring some of the Pygame code (the
-                fundamentals in Python are already decently solid, but the Pygame code used to run the display is a bit messy), and actually hosting it online (probably on itch.io, which can handle Pygbag
-                projects.) The code is <a href="https://github.com/lukeBridges123/SIPD">here</a>, though bear in mind that it's unfinished.
+                The basic game logic and a crude UI were done a long time ago, but recently (early 2026) I vibe-coded a much more detailed UI. This lets you
+                adjust various parameters of the simulation (e.g. the size of the grid, the probability that a cell will randomly "mutate" into
+                a different strategy, the proportion of each strategy in the starting grid, even the payoffs for different moves in the game) and 
+                adds a time-series view of the population of each strategy, among other features.
             </p>
 
             <p><Link to="/sipd">You can try it out in your browser by clicking this link.</Link></p>
